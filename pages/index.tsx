@@ -1,20 +1,17 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
-import { GetStaticProps } from 'next'
+import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
+import Layout, { siteTitle } from "../components/layout";
+import { serialize } from "next-mdx-remote/serialize";
+import utilStyles from "../styles/utils.module.css";
+import type { MetaData, Post } from "types";
+import Date from "../components/date";
+import fs from "fs/promises";
+import Head from "next/head";
+import Link from "next/link";
+import path from "path";
 
 export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout home>
       <Head>
@@ -23,33 +20,56 @@ export default function Home({
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
+          (This is a sample website - you’ll be building a site like this in{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+          {posts.map((post, index) => (
+            <li key={index} className={utilStyles.listItem}>
+              <Link href={`/posts/${post.meta.id}`}>{post.meta.title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <Date dateString={post.meta.date} />
               </small>
             </li>
           ))}
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<{
+    posts: Post[];
+  }>
+> {
+  const dirPath = path.join(process.cwd(), "posts");
+  const files = await fs.readdir(dirPath);
+
+  const posts = await Promise.all(
+    files.map(async (fileName: string) => {
+      const postFile = await fs.readFile(
+        path.join(process.cwd(), "posts", fileName),
+        "utf-8",
+      );
+      const mdxSource = await serialize(postFile, {
+        parseFrontmatter: true,
+      });
+
+      return {
+        meta: mdxSource.frontmatter as MetaData,
+        content: mdxSource,
+      };
+    }),
+  );
+
   return {
     props: {
-      allPostsData
-    }
-  }
+      posts,
+    },
+  };
 }
