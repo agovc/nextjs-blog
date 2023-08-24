@@ -1,7 +1,7 @@
 import type { GetStaticPropsResult, GetStaticPaths } from "next";
 import utilStyles from "../../styles/utils.module.css";
 import { serialize } from "next-mdx-remote/serialize";
-import type { MetaData, Post, Params } from "types";
+import type { MetaData, Post, Params } from "~/types";
 import type { InferGetStaticPropsType } from "next";
 import { getAllPostIds } from "../../lib/posts";
 import Layout from "../../components/layout";
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }: Params): Promise<
     post: Post;
   }>
 > {
-  const postsDirectory = path.join(process.cwd(), "posts");
+  const postsDirectory = path.join(process.cwd(), "src", "content", "posts");
   const fullPath = path.join(postsDirectory, `${params?.id}.md`);
 
   try {

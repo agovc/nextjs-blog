@@ -2,7 +2,7 @@ import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
 import Layout, { siteTitle } from "../components/layout";
 import { serialize } from "next-mdx-remote/serialize";
 import utilStyles from "../styles/utils.module.css";
-import type { MetaData, Post } from "types";
+import type { MetaData, Post } from "~/types";
 import Date from "../components/date";
 import fs from "fs/promises";
 import Head from "next/head";
@@ -47,13 +47,13 @@ export async function getStaticProps(): Promise<
     posts: Post[];
   }>
 > {
-  const dirPath = path.join(process.cwd(), "posts");
+  const dirPath = path.join(process.cwd(), "src", "content", "posts");
   const files = await fs.readdir(dirPath);
 
   const posts = await Promise.all(
     files.map(async (fileName: string) => {
       const postFile = await fs.readFile(
-        path.join(process.cwd(), "posts", fileName),
+        path.join(process.cwd(), "src", "content", "posts", fileName),
         "utf-8",
       );
       const mdxSource = await serialize(postFile, {
