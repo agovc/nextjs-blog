@@ -1,9 +1,18 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}',
-      // For the best performance and to avoid false positives,
-      // be as specific as possible with your content configuration.
+      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+    theme: {
+      container: {
+        padding: {
+          DEFAULT: '3rem',
+          sm: '4rem',
+          lg: '6rem',
+          xl: '8rem',
+        },
+      },
+    },
+    plugins: [],
   };

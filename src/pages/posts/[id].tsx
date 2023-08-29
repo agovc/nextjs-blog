@@ -1,5 +1,4 @@
 import type { GetStaticPropsResult, GetStaticPaths } from "next";
-import utilStyles from "../../styles/utils.module.css";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MetaData, Post, Params } from "~/types";
 import type { InferGetStaticPropsType } from "next";
@@ -7,6 +6,7 @@ import { getAllPostIds } from "../../lib/posts";
 import Layout from "../../components/layout";
 import { MDXRemote } from "next-mdx-remote";
 import Date from "../../components/date";
+import Image from "next/image";
 import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
@@ -20,11 +20,29 @@ export default function Post({
         <title>{post.meta.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{post.meta.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={post.meta.date} />
+        <div className="flex flex-col md:flex-row items-center md:items-start mb-8  mt-8 md:mt-24">
+          <Image
+            priority
+            src="/images/profile-pic.jpg"
+            className="rounded-full h-20 w-20 mr-4 border-neutral-100 border-4 mb-4 md:mb-0"
+            height={70}
+            width={70}
+            alt="Avatar"
+          />
+
+          <div>
+            <h1 className="text-4xl gradient-text font-extrabold">
+              {post.meta.title}
+            </h1>
+            <div className="text-gray-600">
+              <Date dateString={post.meta.date} />
+            </div>
+          </div>
         </div>
-        <MDXRemote {...post.content} />
+
+        <div className="mdx-content">
+          <MDXRemote {...post.content} />
+        </div>
       </article>
     </Layout>
   );

@@ -1,10 +1,7 @@
-import utilStyles from "../styles/utils.module.css";
-import styles from "./layout.module.css";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 
-const name = "Santi";
 export const siteTitle = "Santi's dev blog";
 
 export default function Layout({
@@ -14,49 +11,81 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
 }) {
+  const contactHref = new URL("mailto:hey@santicorona.dev");
+  contactHref.searchParams.set("subject", "Hello!");
+
   return (
-    <div className={styles.container}>
+    <div className="container mx-auto mt-12">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Santi's dev blog" />
+        <meta name="description" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
+        <link
+          rel="preload"
+          href="Mona-Sans.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </Head>
-      <header className={styles.header}>
+      <header>
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile-pic.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <div className="mt-8 md:mt-36 grid grid-cols-1 md:grid-cols-4 gap-2">
+              <div className="md:col-span-1 md:flex md:flex-col md:order-2 flex justify-center md:justify-start items-center">
+                <div className="relative h-40 w-40">
+                  <Image
+                    priority
+                    src="/images/profile-pic.jpg"
+                    className="rounded-full"
+                    fill={true}
+                    alt={siteTitle}
+                  />
+                </div>
+              </div>
+              <div className="mt-4 md:mt-0 col-span-3 flex flex-col md:order-1 text-center md:text-left md:items-start justify-center">
+                <h1
+                  className={`gradient-text gradient-text-animate text-4xl md:text-5xl lg:text-6xl  whitespace-normal`}
+                >
+                  {"Hi, I'm Santi!"}
+                  <br />
+                  {"I am a web eng"}
+                </h1>
+                <p className="my-6">
+                  {"I'm a SF-based software engineer with a strong focus on "}
+                  <span className="font-bold">React</span>{" "}
+                  {" and a keen interest in "}
+                  <span className="font-bold">AI</span>.{" "}
+                  {"Join me as we explore the ever-changing world of "}
+                  <span className="font-bold">frontend</span>
+                  {" development. Let's connect on "}
+                  <a
+                    href="https://www.linkedin.com/in/agovc/"
+                    target="_blank"
+                    className="font-bold underline hover:decoration-2 hover:text-blue-950"
+                  >
+                    LinkedIn
+                  </a>
+                  {" or say hello at "}
+                  <a
+                    href={contactHref.toString()}
+                    target="_blank"
+                    className="font-bold underline hover:decoration-2 hover:text-blue-950"
+                  >
+                    hey@santicorona.dev
+                  </a>
+                  {"!"}
+                </p>
+              </div>
+            </div>
           </>
         ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile-pic.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
+          <></>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="hover:underline mb-8">
           <Link href="/">← Back to home</Link>
         </div>
       )}
