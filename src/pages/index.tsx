@@ -1,7 +1,6 @@
 import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
 import Layout, { siteTitle } from "../components/layout";
 import { serialize } from "next-mdx-remote/serialize";
-import utilStyles from "../styles/utils.module.css";
 import type { MetaData, Post } from "~/types";
 import Date from "../components/date";
 import fs from "fs/promises";
@@ -17,20 +16,21 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Hello and welcome! This blog is where I unpack my learning adventures,
-          particularly within the world of frontend.
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section>
+        <ul>
           {posts.map((post, index) => (
-            <li key={index} className={utilStyles.listItem}>
-              <Link href={`/posts/${post.meta.id}`}>{post.meta.title}</Link>
+            <li className="mb-4 list-none text-center md:text-left" key={index}>
+              <Link
+                className="relative inline-block group"
+                href={`/posts/${post.meta.id}`}
+              >
+                <span className="relative z-10 underline hover:decoration-2">
+                  {post.meta.title}
+                </span>
+                <span className="absolute inset-0 bg-yellow-200 h-4 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform translate-y-2 ease-out duration-500"></span>
+              </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className="text-gray-600">
                 <Date dateString={post.meta.date} />
               </small>
             </li>

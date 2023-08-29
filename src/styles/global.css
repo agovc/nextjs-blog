@@ -1,7 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -18,20 +20,168 @@ body {
   font-size: 18px;
 }
 
+@font-face {
+  font-family: "Mona Sans";
+  src:
+    url("/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
 * {
   box-sizing: border-box;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
+ol,
+ul,
+menu {
+  list-style: inherit;
 }
 
-a:hover {
-  text-decoration: underline;
+.font-mona-sans {
+  font-family: "Mona Sans";
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.gradient-text {
+  font-family: "Mona Sans";
+  font-weight: 900;
+  font-stretch: 125;
+  background-color: #f3ec78;
+  background-image: radial-gradient(
+    farthest-side circle at -100% -44% in oklch,
+    oklch(49% 0.31 232) 2% 2%,
+    30%,
+    oklch(76% 0.24 325) 70% 70%,
+    oklch(96% 0.3 45) 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.gradient-text-animate {
+  animation: color-movement-rev 0.5s ease forwards;
+}
+
+.gradient-text-animate:hover {
+  animation: color-movement 0.5s ease-in forwards;
+}
+
+@keyframes color-movement-rev {
+  0% {
+    background-image: radial-gradient(
+      farthest-side circle at -10% 0% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  25% {
+    background-image: radial-gradient(
+      farthest-side circle at -20% 0% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  50% {
+    background-image: radial-gradient(
+      farthest-side circle at -40% -10% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  75% {
+    background-image: radial-gradient(
+      farthest-side circle at -75% -30% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  100% {
+    background-image: radial-gradient(
+      farthest-side circle at -100% -44% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+}
+
+@keyframes color-movement {
+  0% {
+    background-image: radial-gradient(
+      farthest-side circle at -100% -44% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  25% {
+    background-image: radial-gradient(
+      farthest-side circle at -75% -30% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  50% {
+    background-image: radial-gradient(
+      farthest-side circle at -40% -10% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  75% {
+    background-image: radial-gradient(
+      farthest-side circle at -20% 0% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+  100% {
+    background-image: radial-gradient(
+      farthest-side circle at -10% 0% in oklch,
+      oklch(62% 0.37 232) 2% 2%,
+      30%,
+      oklch(76% 0.24 325) 70% 70%,
+      oklch(96% 0.3 45) 100%
+    );
+  }
+}
+
+.mdx-content blockquote,
+.mdx-content dl,
+.mdx-content dd,
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3,
+.mdx-content h4,
+.mdx-content h5,
+.mdx-content h6,
+.mdx-content hr,
+.mdx-content figure,
+.mdx-content p,
+.mdx-content pre,
+.mdx-content ol,
+.mdx-content ul {
+  margin: revert; /* Reset margin to its initial value (usually '1em 0') */
+  margin: revert;
+  padding: revert;
 }
