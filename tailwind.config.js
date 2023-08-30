@@ -13,6 +13,25 @@ module.exports = {
           xl: '8rem',
         },
       },
+      articleContainer: {
+        padding: {
+          DEFAULT: '4rem',
+          sm: '6rem',
+          lg: '8rem',
+          xl: '12rem',
+        },
+      },
     },
     plugins: [],
+    extend: {
+      typography: {
+        'big-first-paragraph': {
+          css: {
+            '& p:first-of-type::first-letter': {
+              fontSize: '2em', // Adjust the font size as needed
+            },
+          },
+        },
+      },
+    },
   };

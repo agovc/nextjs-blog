@@ -166,6 +166,8 @@ menu {
   }
 }
 
+/* MDX Markdown styles */
+
 .mdx-content blockquote,
 .mdx-content dl,
 .mdx-content dd,
@@ -184,4 +186,20 @@ menu {
   margin: revert; /* Reset margin to its initial value (usually '1em 0') */
   margin: revert;
   padding: revert;
+}
+
+.mdx-content h1 {
+  font-family: "Mona Sans";
+  font-size: x-large;
+  font-weight: 900;
+  color: rgb(102, 92, 154);
+}
+
+.mdx-content a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.mdx-content a:hover {
+  text-decoration-thickness: 2px;
 }
