@@ -62,7 +62,7 @@ export default function Layout({
                   <a
                     href="https://www.linkedin.com/in/agovc/"
                     target="_blank"
-                    className="font-bold underline hover:decoration-2 hover:text-blue-950"
+                    className="underline hover:decoration-2 hover:text-blue-950"
                   >
                     LinkedIn
                   </a>
@@ -70,7 +70,7 @@ export default function Layout({
                   <a
                     href={contactHref.toString()}
                     target="_blank"
-                    className="font-bold underline hover:decoration-2 hover:text-blue-950"
+                    className="underline hover:decoration-2 hover:text-blue-950"
                   >
                     hey@santicorona.dev
                   </a>
