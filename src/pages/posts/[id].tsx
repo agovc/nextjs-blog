@@ -2,6 +2,7 @@ import type { GetStaticPropsResult, GetStaticPaths } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MetaData, Post, Params } from "~/types";
 import type { InferGetStaticPropsType } from "next";
+import CodeBlock from "../../components/CodeBlock";
 import { getAllPostIds } from "../../lib/posts";
 import Layout from "../../components/layout";
 import { MDXRemote } from "next-mdx-remote";
@@ -10,6 +11,8 @@ import Image from "next/image";
 import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
+
+const components = { CodeBlock };
 
 export default function Post({
   post,
@@ -40,8 +43,8 @@ export default function Post({
           </div>
         </div>
 
-        <div className="mdx-content">
-          <MDXRemote {...post.content} />
+        <div className="mdx-content first-letter:text-5xl first-letter:mr-2 first-letter:font-bold first-letter:float-left">
+          <MDXRemote components={components} {...post.content} />
         </div>
       </article>
     </Layout>

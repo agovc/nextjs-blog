@@ -24,7 +24,7 @@ export default function Home({
                 className="relative inline-block group"
                 href={`/posts/${post.meta.id}`}
               >
-                <span className="relative z-10 underline hover:decoration-2">
+                <span className="text-lg relative z-10 underline hover:decoration-2">
                   {post.meta.title}
                 </span>
                 <span className="absolute inset-0 bg-yellow-200 h-4 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform translate-y-2 ease-out duration-500"></span>
