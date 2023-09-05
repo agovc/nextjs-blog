@@ -15,7 +15,7 @@ export default function Layout({
   contactHref.searchParams.set("subject", "Hello!");
 
   return (
-    <div className="container mx-auto mt-12">
+    <div className="absolute mx-24 mt-12 bg-black p-0.5 space-y-0.5">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
@@ -31,27 +31,18 @@ export default function Layout({
       <header>
         {home ? (
           <>
-            <div className="mt-8 md:mt-36 grid grid-cols-1 md:grid-cols-4 gap-2">
-              <div className="md:col-span-1 md:flex md:flex-col md:order-2 flex justify-center md:justify-start items-center">
-                <div className="relative h-40 w-40">
-                  <Image
-                    priority
-                    src="/images/profile-pic.jpg"
-                    className="rounded-full"
-                    fill={true}
-                    alt={siteTitle}
-                  />
-                </div>
-              </div>
-              <div className="mt-4 md:mt-0 col-span-3 flex flex-col md:order-1 text-center md:text-left md:items-start justify-center">
+            <div className="relative grid grid-cols-1 md:grid-cols-3 h-[450px] space-x-0.5">
+              <div className="bg-white rounded-2xl col-span-2 p-8 flex items-center">
+                <div>
                 <h1
-                  className={`gradient-text gradient-text-animate text-4xl md:text-5xl lg:text-6xl  whitespace-normal`}
+                  className={`inline-block gradient-text gradient-text-animate text-4xl md:text-4xl lg:text-8xl  whitespace-pre`}
                 >
-                  {"Hi, I'm Santi!"}
+                  Hey there!
+                  {/* {"Hi, I'm Santi!"} */}
                   <br />
-                  {"I am a web eng"}
+                  {/* {"I am a web eng"} */}
                 </h1>
-                <p className="my-6">
+                <p className="my-6 text-lg">
                   {"I'm a SF-based software engineer with a strong focus on "}
                   <span className="font-bold">React</span>{" "}
                   {" and a keen interest in "}
@@ -76,6 +67,18 @@ export default function Layout({
                   </a>
                   {"!"}
                 </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl">
+                <div className="relative h-full">
+                  <Image
+                    priority
+                    src="/images/profile.jpg"
+                    className="object-cover h-full w-full rounded-2xl"
+                    fill={true}
+                    alt={siteTitle}
+                  />
+                </div>
               </div>
             </div>
           </>

@@ -18,6 +18,7 @@ body {
     sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background-color: white;
 }
 
 @font-face {
@@ -47,7 +48,7 @@ menu {
   font-family: "Mona Sans";
   font-weight: 900;
   font-stretch: 125;
-  background-color: #f3ec78;
+  background-color: #000000;
   background-image: radial-gradient(
     farthest-side circle at -100% -44% in oklch,
     oklch(49% 0.31 232) 2% 2%,

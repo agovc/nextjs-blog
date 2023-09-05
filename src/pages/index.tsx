@@ -17,23 +17,21 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <section>
-        <ul>
+        <ul className="grid grid-cols-3">
           {posts.map((post, index) => (
-            <li className="mb-4 list-none text-center md:text-left" key={index}>
-              <Link
-                className="relative inline-block group"
-                href={`/posts/${post.meta.id}`}
-              >
-                <span className="text-lg relative z-10 underline hover:decoration-2">
-                  {post.meta.title}
-                </span>
-                <span className="absolute inset-0 bg-yellow-200 h-4 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform translate-y-2 ease-out duration-500"></span>
-              </Link>
-              <br />
-              <small className="text-gray-600">
-                <Date dateString={post.meta.date} />
-              </small>
+                <Link href={`/posts/${post.meta.id}`}>
+            <li className="list-none text font-bold text-center md:text-left bg-white rounded-2xl p-8  hover:bg-slate-200 h-[350px]" key={index}>
+              <>
+                  <span className="text-2xl">
+                    {post.meta.title}
+                  </span>
+                <br />
+                <small className="text-gray-600">
+                  <Date dateString={post.meta.date} />
+                </small>
+              </>
             </li>
+                </Link>
           ))}
         </ul>
       </section>
