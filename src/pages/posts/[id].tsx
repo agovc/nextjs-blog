@@ -1,3 +1,7 @@
+import {
+  HeartbeatExample,
+  FadeInExample,
+} from "../../components/AnimationExamples";
 import type { GetStaticPropsResult, GetStaticPaths } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MetaData, Post, Params } from "~/types";
@@ -12,7 +16,7 @@ import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
 
-const components = { CodeBlock };
+const components = { CodeBlock, HeartbeatExample, FadeInExample };
 
 export default function Post({
   post,
