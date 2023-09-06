@@ -2,7 +2,7 @@
 id: behind-the-blog
 title: "Behind the Blog: The Tech Stack that Powers My Website"
 isPublished: true
-date: "2023-09-30"
+date: "2023-08-30"
 ---
 
 I have wanted to start a blog for a while now, a place to share my thoughts and what I've learned. Even though it's a simple site for now, one thing I really want for my blog is the ability to be fully customizable. So, let's dive into how I did it:
