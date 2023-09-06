@@ -85,9 +85,15 @@ export default function Layout({
       </header>
       <main>{children}</main>
       {!home && (
-        <div className="hover:underline mb-8">
-          <Link href="/">← Back to home</Link>
-        </div>
+        <Link href="/">
+          <button className="mt-8 mb-12">
+            <p className="relative px-6 py-3 font-bold text-black group">
+              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
+              <span className="relative">← Back to home</span>
+            </p>
+          </button>
+        </Link>
       )}
     </div>
   );
