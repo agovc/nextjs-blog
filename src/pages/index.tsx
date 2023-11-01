@@ -1,6 +1,7 @@
 import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
 import Layout, { siteTitle } from "../components/layout";
 import { serialize } from "next-mdx-remote/serialize";
+import { compareDesc, parseISO } from "date-fns";
 import type { MetaData, Post } from "~/types";
 import Date from "../components/date";
 import fs from "fs/promises";
@@ -64,6 +65,10 @@ export async function getStaticProps(): Promise<
         content: mdxSource,
       };
     }),
+  );
+
+  posts.sort((a, b) =>
+    compareDesc(parseISO(a.meta.date), parseISO(b.meta.date)),
   );
 
   return {
