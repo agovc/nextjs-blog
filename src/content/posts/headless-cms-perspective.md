@@ -7,6 +7,9 @@ date: "2023-10-31"
 
 In the ever-evolving landscape of digital projects, where creativity meets functionality, a small idea can quickly blossom into a complex web of files and content. Whether you're a seasoned developer or just starting out, you've likely encountered the challenges that come with managing your project's content and assets. Deployments, code changes, and the constant quest for performance optimization become the norm, making you wonder if there's a better way.
 
+<div className="flex justify-center">
+    <Image src="/images/CMSs.png" alt="CMSs logos" className="py-6 animate-fade-in" height={300} width={500} />
+</div>
 Enter the realm of Headless Content Management Systems (CMS), where the traditional boundaries between content and presentation are shattered. These modern CMS solutions act as data repositories, harnessing the power of APIs to empower your project's content like never before. While the concept itself isn't new, the landscape has evolved to offer accessible and user-friendly options for all.
 
 In this blog post, we'll embark on a journey through the world of Headless CMS, exploring their benefits, and helping you discover the perfect fit for your project. Whether you're a solo creator or part of a dynamic team, we'll guide you through the landscape of options, and you'll even get a glimpse of our choice—[Strapi](https://strapi.io). So, fasten your seatbelts and get ready to unlock the potential of a content-first approach in the digital realm.
@@ -41,8 +44,28 @@ The process to start a new project with Strapi is extremely simple. They also pr
 
 In my case, as I'll be hosting the CMS, I've chosen to integrate it into my monorepo, adopting a workspace with pnpm. This approach ensures a seamless and integrated development environment. However, it's worth noting that if you opt for a CMS service that includes hosting, this step is often streamlined, freeing you from the need to manage hosting configurations. With the setup in place, let's now explore a practical illustration of making an API request to the CMS.
 
+In our CMS, we manage two collections: '**Sessions**' and '**Facilitators**.' These collections share a many-to-many relationship, where multiple facilitators can be associated with various sessions, and vice versa. This dynamic relationship enriches our content, showcasing the collaborations between sessions and facilitators effectively.
+
 <CodeBlock code={`
-    export async function getSession(id: string) {
+    Workshop Collection    Facilitators Collection
+
+    Session 1               Facilitator A
+    Session 2               Facilitator B
+    Session 3               Facilitator C
+
+    Many-to-Many Relationship:
+
+    Session 1 <--> Facilitator A
+    Session 1 <--> Facilitator B
+    Session 2 <--> Facilitator B
+    Session 3 <--> Facilitator A
+    Session 3 <--> Facilitator C
+`} language="less" />
+
+The following serves as a straightforward illustration of making an API request to the CMS. The `/api/:pluralApiId/:documentId` endpoint is utilized to retrieve an entry, and it showcases the use of the `populate` parameter. This parameter plays a pivotal role in specifying which fields from the associated relation are to be populated, offering precise control over the data fetched.
+
+<CodeBlock code={`
+    export async function getWorkshop(id: string) {
     const result = await get<SingleResult<Workshop>(\`/api/workshops/\${id}\`, {
         'populate[facilitators][populate][0]': 'profilePhoto',
     });
@@ -51,8 +74,6 @@ In my case, as I'll be hosting the CMS, I've chosen to integrate it into my mono
     }
 `} language="tsx" />
 ​​
-This serves as a straightforward illustration of making an API request to the CMS. The `/api/:pluralApiId/:documentId` endpoint is utilized to retrieve an entry, and it showcases the use of the `populate` parameter. This parameter plays a pivotal role in specifying which fields from the associated relation are to be populated, offering precise control over the data fetched.
-
 You'll notice that the request body is typed as `Workshop`. This precise typing is one of the key advantages, as it allows for seamless integration of this type definition in the frontend. With this type definition readily available, your frontend code can effortlessly work with the retrieved data, enhancing both clarity and efficiency in your application development.
 
 ## Embracing the Future of Content Management
