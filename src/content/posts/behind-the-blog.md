@@ -1,6 +1,7 @@
 ---
 id: behind-the-blog
 title: "Behind the Blog: The Tech Stack that Powers My Website"
+description: "Explore CSS-based animations with Tailwind CSS, highlighting the advantages of CSS over JavaScript for web animations, including performance and accessibility benefits."
 isPublished: true
 date: "2023-08-30"
 ---

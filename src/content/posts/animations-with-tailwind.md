@@ -1,6 +1,7 @@
 ---
 id: animations-with-tailwind
 title: "Adding Spice to Your Web Design: Animations with Tailwind CSS"
+description: "Explore CSS-based animations with Tailwind CSS, highlighting the advantages of CSS over JavaScript for web animations, including performance and accessibility benefits."
 isPublished: true
 date: "2023-09-05"
 ---
