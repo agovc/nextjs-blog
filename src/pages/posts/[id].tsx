@@ -22,36 +22,44 @@ export default function Post({
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{post.meta.title}</title>
-      </Head>
-      <article>
-        <div className="flex flex-col md:flex-row items-center md:items-start mb-8  mt-8 md:mt-24">
-          <Image
-            priority
-            src="/images/profile-pic.jpg"
-            className="rounded-full h-20 w-20 mr-4 border-neutral-100 border-4 mb-4 md:mb-0"
-            height={70}
-            width={70}
-            alt="Avatar"
-          />
+        <title>{`${post.meta.title} - Santi's Blog`}</title>
 
-          <div>
-            <h1 className="text-4xl gradient-text font-extrabold">
-              {post.meta.title}
-            </h1>
-            <div className="text-gray-600">
-              <Date dateString={post.meta.date} />
+        <meta property="og:title" content={post.meta.title} />
+        <meta property="og:description" content={post.meta.description} />
+
+        <meta property="og:site_name" content="Santi's Blog" />
+        <meta property="og:locale" content="en_US" />
+      </Head>
+      <Layout>
+        <article>
+          <div className="flex flex-col md:flex-row items-center md:items-start mb-8  mt-8 md:mt-24">
+            <Image
+              priority
+              src="/images/profile-pic.jpg"
+              className="rounded-full h-20 w-20 mr-4 border-neutral-100 border-4 mb-4 md:mb-0"
+              height={70}
+              width={70}
+              alt="Avatar"
+            />
+
+            <div>
+              <h1 className="text-4xl gradient-text font-extrabold">
+                {post.meta.title}
+              </h1>
+              <div className="text-gray-600">
+                <Date dateString={post.meta.date} />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mdx-content first-letter:text-5xl first-letter:mr-2 first-letter:font-bold first-letter:float-left">
-          <MDXRemote components={components} {...post.content} />
-        </div>
-      </article>
-    </Layout>
+          <div className="mdx-content first-letter:text-5xl first-letter:mr-2 first-letter:font-bold first-letter:float-left">
+            <MDXRemote components={components} {...post.content} />
+          </div>
+        </article>
+      </Layout>
+    </>
   );
 }
 
