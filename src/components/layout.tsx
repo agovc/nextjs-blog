@@ -2,7 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 
-export const siteTitle = "Santi's dev blog";
+export const siteTitle = "Santi's Blog";
 
 export default function Layout({
   children,

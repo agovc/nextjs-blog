@@ -16,7 +16,7 @@ import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
 
-const components = { CodeBlock, HeartbeatExample, FadeInExample };
+const components = { CodeBlock, HeartbeatExample, FadeInExample, Image };
 
 export default function Post({
   post,

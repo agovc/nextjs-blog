@@ -195,6 +195,13 @@ menu {
   color: rgb(102, 92, 154);
 }
 
+.mdx-content h2 {
+  font-family: "Mona Sans";
+  font-size: large;
+  font-weight: 900;
+  color: rgb(102, 92, 154);
+}
+
 .mdx-content a {
   text-decoration: underline;
   font-weight: 600;
