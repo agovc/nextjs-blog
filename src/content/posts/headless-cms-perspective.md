@@ -48,19 +48,19 @@ In my case, as I'll be hosting the CMS, I've chosen to integrate it into my mono
 In our CMS, we manage two collections: '**Sessions**' and '**Facilitators**.' These collections share a many-to-many relationship, where multiple facilitators can be associated with various sessions, and vice versa. This dynamic relationship enriches our content, showcasing the collaborations between sessions and facilitators effectively.
 
 <CodeBlock code={`
-    Workshop Collection    Facilitators Collection
+    Workshop Collection     Facilitators Collection
 
-    Session 1               Facilitator A
-    Session 2               Facilitator B
-    Session 3               Facilitator C
+    Workshop 1              Facilitator A
+    Workshop 2              Facilitator B
+    Workshop 3              Facilitator C
 
     Many-to-Many Relationship:
 
-    Session 1 <--> Facilitator A
-    Session 1 <--> Facilitator B
-    Session 2 <--> Facilitator B
-    Session 3 <--> Facilitator A
-    Session 3 <--> Facilitator C
+    Workshop 1 <--> Facilitator A
+    Workshop 1 <--> Facilitator B
+    Workshop 2 <--> Facilitator B
+    Workshop 3 <--> Facilitator A
+    Workshop 3 <--> Facilitator C
 `} language="less" />
 
 The following serves as a straightforward illustration of making an API request to the CMS. The `/api/:pluralApiId/:documentId` endpoint is utilized to retrieve an entry, and it showcases the use of the `populate` parameter. This parameter plays a pivotal role in specifying which fields from the associated relation are to be populated, offering precise control over the data fetched.
