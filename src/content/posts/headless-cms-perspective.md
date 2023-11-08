@@ -67,9 +67,9 @@ The following serves as a straightforward illustration of making an API request 
 
 <CodeBlock code={`
     export async function getWorkshop(id: string) {
-    const result = await get<SingleResult<Workshop>(\`/api/workshops/\${id}\`, {
-        'populate[facilitators][populate][0]': 'profilePhoto',
-    });
+        const result = await get<SingleResult<Workshop>(\`/api/workshops/\${id}\`, {
+            'populate[facilitators][populate][0]': 'profilePhoto',
+        });
 
     return result.data;
     }
