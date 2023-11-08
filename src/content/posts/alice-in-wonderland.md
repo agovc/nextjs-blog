@@ -36,7 +36,8 @@ Honestly, I wasn't too surprised by the result, as I expected something simple. 
 
 >**Prompt text:** "Create an SVG representation of \{character\} from Alice in Wonderland."
 
-<div className="flex justify-center content-between">
+<div className="flex justify-center ">
+<div className="md:flex md:justify-center md:content-between">
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" version="1.1">
   <path d="M100 100 L130 200 L70 200 Z" fill="blue" />
   <circle cx="100" cy="80" r="30" fill="lightpink" />
@@ -83,6 +84,7 @@ Honestly, I wasn't too surprised by the result, as I expected something simple. 
   <rect x="95" y="125" width="10" height="20" fill="red" />
   <rect x="95" y="145" width="10" height="5" fill="white" />
 </svg>
+</div>
 </div>
 
 After comparing the first result with the SVGs, I was genuinely impressed. Alice has a triangular body that resembles a dress, the rabbit has a pocket watch, and the Hatter has a hat.
@@ -140,7 +142,8 @@ Right after, another idea came to me. Let's step away from alice and engage in s
 
 Then, I asked it to add two long ears and a tail, and finally, I requested it to add legs.
 
-<div className="flex justify-center content-between">
+<div className="flex justify-center ">
+<div className="md:flex md:justify-center md:content-between">
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" version="1.1">
   <ellipse cx="100" cy="100" rx="60" ry="40" fill="brown" />
   <circle cx="100" cy="70" r="30" fill="brown" />
@@ -190,6 +193,7 @@ Then, I asked it to add two long ears and a tail, and finally, I requested it to
   <circle cx="80" cy="140" r="10" fill="brown" />
   <circle cx="120" cy="140" r="10" fill="brown" />
 </svg>
+</div>
 </div>
 
 Here's a clear example of how, through prompt engineering, we can obtain better results from a model. The more precise you are in your prompts, the better the outcome.
