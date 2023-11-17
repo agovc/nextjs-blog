@@ -3,6 +3,7 @@ import {
   FadeInExample,
 } from "../../components/AnimationExamples";
 import type { GetStaticPropsResult, GetStaticPaths } from "next";
+import Chat, { NoEffectsChat } from "../../components/Chat";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MetaData, Post, Params } from "~/types";
 import type { InferGetStaticPropsType } from "next";
@@ -16,7 +17,14 @@ import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
 
-const components = { CodeBlock, HeartbeatExample, FadeInExample, Image };
+const components = {
+  CodeBlock,
+  Chat,
+  NoEffectsChat,
+  HeartbeatExample,
+  FadeInExample,
+  Image,
+};
 
 export default function Post({
   post,
@@ -26,7 +34,10 @@ export default function Post({
       <Head>
         <title>{`${post.meta.title} - Santi's Blog`}</title>
 
-        <meta property="og:title" content={post.meta.title} />
+        <meta
+          property="og:title"
+          content={`${post.meta.title} - Santi's Blog`}
+        />
         <meta property="og:description" content={post.meta.description} />
 
         <meta property="og:site_name" content="Santi's Blog" />
