@@ -184,8 +184,12 @@ menu {
 .mdx-content ol,
 .mdx-content ul {
   margin: revert; /* Reset margin to its initial value (usually '1em 0') */
-  margin: revert;
   padding: revert;
+}
+
+.mdx-content .chat ul {
+  margin: 0;
+  padding: 0;
 }
 
 .mdx-content h1 {
@@ -213,4 +217,5 @@ menu {
 
 .mdx-content code {
   color: rgb(102, 92, 154);
+  font-size: 14px;
 }
