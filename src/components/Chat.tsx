@@ -76,7 +76,7 @@ export function NoEffectsChat() {
   ];
 
   return (
-    <article className="p-6 chat">
+    <article className="chat">
       <div className="border border-gray-300 rounded-xl p-4 max-w-screen-md">
         <ul className="overflow-auto flex flex-col h-[350px] m-0 p-0">
           {messages.map((message, index) => (
@@ -197,7 +197,7 @@ export default function Chat() {
   };
 
   return (
-    <article className="p-6 chat">
+    <article className="chat">
       <div className="border border-gray-300 rounded-xl p-4 max-w-screen-md">
         <ul className="overflow-auto flex flex-col max-h-[350px] m-0 p-0">
           {messages.map((message, index) => (
@@ -211,7 +211,7 @@ export default function Chat() {
                   <Image
                     priority
                     src="/images/profile-pic.jpg"
-                    className="rounded-full h-6 w-6 border-[1px] border-slate-400"
+                    className="rounded-full h-6 w-6 object-cover border-[1px] border-slate-400"
                     height={24}
                     width={24}
                     alt={message.sender}
