@@ -2,8 +2,10 @@ import {
   HeartbeatExample,
   FadeInExample,
 } from "../../components/AnimationExamples";
+import CollapsableTableExample from "~/components/CollapsableTable";
 import type { GetStaticPropsResult, GetStaticPaths } from "next";
 import Chat, { NoEffectsChat } from "../../components/Chat";
+import JSONExample from "~/components/InteractiveJSON";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MetaData, Post, Params } from "~/types";
 import type { InferGetStaticPropsType } from "next";
@@ -23,6 +25,8 @@ const components = {
   NoEffectsChat,
   HeartbeatExample,
   FadeInExample,
+  JSONExample,
+  CollapsableTableExample,
   Image,
 };
 
