@@ -45,7 +45,7 @@ The process to start a new project with Strapi is extremely simple. They also pr
 
 In my case, as I'll be hosting the CMS, I've chosen to integrate it into my monorepo, adopting a workspace with pnpm. This approach ensures a seamless and integrated development environment. However, it's worth noting that if you opt for a CMS service that includes hosting, this step is often streamlined, freeing you from the need to manage hosting configurations. With the setup in place, let's now explore a practical illustration of making an API request to the CMS.
 
-In our CMS, we manage two collections: '**Sessions**' and '**Facilitators**.' These collections share a many-to-many relationship, where multiple facilitators can be associated with various sessions, and vice versa. This dynamic relationship enriches our content, showcasing the collaborations between sessions and facilitators effectively.
+In our CMS, we manage two collections: '**Sessions**' and '**Facilitators**.' These collections share a many-to-many relationship, where multiple facilitators can be associated with various sessions, and vice versa. This dynamic relationship enriches our content, showcasing the collaborations between workshops and facilitators effectively.
 
 <CodeBlock code={`
     Workshop Collection     Facilitators Collection
