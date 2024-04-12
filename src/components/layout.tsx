@@ -53,14 +53,13 @@ export default function Layout({
                 </h1>
                 <p className="my-6">
                   {"I'm a SF-based software engineer with a strong focus on "}
-                  <span className="font-bold">React</span>{" "}
+                  <span className="font-bold">frontend</span>{" "}
                   {" and a keen interest in "}
                   <span className="font-bold">AI</span>.{" "}
                   {"Join me as we explore the ever-changing world of "}
-                  <span className="font-bold">frontend</span>
-                  {" development. Let's connect on "}
+                  {"web development. Let's connect on "}
                   <a
-                    href="https://www.linkedin.com/in/agovc/"
+                    href="https://www.linkedin.com/in/santicd/"
                     target="_blank"
                     className="underline hover:decoration-2 hover:text-blue-950"
                   >
