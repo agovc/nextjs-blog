@@ -4,6 +4,7 @@ title: "Through the Looking Glass with ChatGPT: A Visual Experiment"
 description: "Discover the magic of AI creativity in 'ChatGPT's Wonderland: Drawing with Words.' Explore the creative evolution of AI and the potential for richer visual content."
 isPublished: true
 date: "2023-11-07"
+image: "/images/thumbnails/alice.webp"
 ---
 
 Step through the looking glass because it's been a Wonderland of AI wonders this year!  OpenAI, one of the pioneers in AI, released two products/models that have transformed the world: DALL·E (for images), chatGPT (for text), and Whisper (for audio). And as we know, multi-models are on the horizon, allowing the combination of models to transition from text to images, images to text, and possibly images to audio, and so on. The rabbit hole is real!
@@ -48,26 +49,26 @@ Honestly, I wasn't too surprised by the result, as I expected something simple. 
   <circle cx="100" cy="85" r="3" fill="peachpuff" />
   <path d="M100 90 Q95 100, 100 105 Q105 100, 100 90" stroke="black" fill="none" />
   <rect x="90" y="180" width="20" height="20" fill="white" />
-  <line x1="90" y1="180" x2="110" y2="180" stroke="black" stroke-width="1" />
-  <line x1="90" y1="190" x2="110" y2="190" stroke="black" stroke-width="1" />
+  <line x1="90" y1="180" x2="110" y2="180" stroke="black" strokeWidth="1" />
+  <line x1="90" y1="190" x2="110" y2="190" stroke="black" strokeWidth="1" />
   <rect x="85" y="220" width="10" height="10" fill="black" />
   <rect x="105" y="220" width="10" height="10" fill="black" />
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" version="1.1">
-  <ellipse cx="100" cy="150" rx="30" ry="50" fill="white" stroke="black" stroke-width="1" />
-  <circle cx="100" cy="100" r="20" fill="white" stroke="black" stroke-width="1" />
+  <ellipse cx="100" cy="150" rx="30" ry="50" fill="white" stroke="black" strokeWidth="1" />
+  <circle cx="100" cy="100" r="20" fill="white" stroke="black" strokeWidth="1" />
   <circle cx="90" cy="95" r="3" fill="black" />
   <circle cx="110" cy="95" r="3" fill="black" />
   <circle cx="100" cy="100" r="2" fill="pink" />
   <path d="M100 103 Q105 110, 100 115 Q95 110, 100 103" stroke="black" fill="none" />
-  <ellipse cx="80" cy="90" rx="10" ry="15" fill="white" stroke="black" stroke-width="1" />
-  <ellipse cx="120" cy="90" rx="10" ry="15" fill="white" stroke="black" stroke-width="1" />
-  <rect x="85" y="135" width="30" height="20" fill="red" stroke="black" stroke-width="1" />
+  <ellipse cx="80" cy="90" rx="10" ry="15" fill="white" stroke="black" strokeWidth="1" />
+  <ellipse cx="120" cy="90" rx="10" ry="15" fill="white" stroke="black" strokeWidth="1" />
+  <rect x="85" y="135" width="30" height="20" fill="red" stroke="black" strokeWidth="1" />
   <polygon points="100,145 95,155 105,155" fill="blue" />
   <circle cx="92" cy="152" r="7" fill="gold" />
   <rect x="88" y="150" width="8" height="4" fill="gold" />
-  <line x1="92" y1="152" x2="92" y2="158" stroke="black" stroke-width="1" />
+  <line x1="92" y1="152" x2="92" y2="158" stroke="black" strokeWidth="1" />
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" version="1.1">

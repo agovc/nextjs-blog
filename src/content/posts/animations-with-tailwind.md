@@ -4,6 +4,7 @@ title: "Adding Spice to Your Web Design: Animations with Tailwind CSS"
 description: "Explore CSS-based animations with Tailwind CSS, highlighting the advantages of CSS over JavaScript for web animations, including performance and accessibility benefits."
 isPublished: true
 date: "2023-09-05"
+image: "/images/thumbnails/animations.png"
 ---
 
 Animations play a pivotal role in enhancing the web user experience, capable of profoundly influencing how a user perceives a website. When it comes to animating web elements, developers often turn to either JavaScript or CSS. In this blog, centered around the use of Tailwind CSS, we will explore the realm of CSS-based animations.

@@ -1,9 +1,10 @@
 ---
 id: langchain-chatbot
-title: "From UIs to Text Boxes: Building an AI powered chatbot with LangChain JS"
+title: "From UIs to Text Boxes: Building an AI powered chatbot with LangChain JS (Part 1 of 2)"
 description: "Discover the chatbot revolution with LangChain: UIs to Text Boxes. Unveil the adventure now!"
 isPublished: true
 date: "2023-11-10"
+image: "/images/thumbnails/chat-ai.webp"
 ---
 
 Welcome to the wild world of AI, where chatbots are multiplying faster than rabbits on a caffeine high—seriously, **EVERYTHING** has a chatbot now. I'm starting to think even my coffee maker needs one! 🤖☕️ Do we really need a chatbot for every platform, though? It's not just a joke; it feels like we're hurtling into the chatbot/agent abyss.

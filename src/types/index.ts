@@ -7,6 +7,7 @@ export type Params = {
 };
 
 export type MetaData = {
+  image: string;
   description: string;
   date: string;
   title: string;
