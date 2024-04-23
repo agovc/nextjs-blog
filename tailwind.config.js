@@ -5,6 +5,14 @@ module.exports = {
       "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+      extend: {
+        colors: {
+          '_black': '#0D0D0D',
+          '_darkgray': '#191919',
+          '_gray': '#B1B1B1',
+          '_lightgray': '#F2F2F2'
+        },
+      },
       container: {
         padding: {
           DEFAULT: '3rem',
@@ -41,7 +49,6 @@ module.exports = {
         "heartbeat": "heartbeat 2s infinite",
       },
     },
-    plugins: [],
     extend: {
       typography: {
         'big-first-paragraph': {

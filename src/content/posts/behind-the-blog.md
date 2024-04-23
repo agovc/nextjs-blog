@@ -4,6 +4,7 @@ title: "Behind the Blog: The Tech Stack that Powers My Website"
 description: "Explore CSS-based animations with Tailwind CSS, highlighting the advantages of CSS over JavaScript for web animations, including performance and accessibility benefits."
 isPublished: true
 date: "2023-08-30"
+image: "/images/thumbnails/tech-stack.webp"
 ---
 
 I have wanted to start a blog for a while now, a place to share my thoughts and what I've learned. Even though it's a simple site for now, one thing I really want for my blog is the ability to be fully customizable. So, let's dive into how I did it:

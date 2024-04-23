@@ -1,9 +1,10 @@
 ---
 id: chatbot-ui
-title: "Reality Check: Crafting a Chatbot UI with React and a Dash of Selling Sunset Glam"
+title: "Reality Check: Crafting a Chatbot UI with React and a Dash of Selling Sunset Glam (Part 2 of 2)"
 description: "Join the virtual tea party and learn how to craft a stylish chatbot, where code meets conversation in a Selling Sunset-inspired coding adventure."
 isPublished: true
 date: "2023-12-16"
+image: "/images/thumbnails/chat-ui.webp"
 ---
 
 In our last blog, we dived into the world of chatbots with LangChain JS, but we were too busy weaving API magic and crafting message chains. Today, we're taking a detour—picture this as a **Selling Sunset**-themed episode—where the drama unfolds not in high-end real estate but within the pixels of our chatbot UI.
