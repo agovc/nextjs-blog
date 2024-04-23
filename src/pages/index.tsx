@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { compareDesc, parseISO } from "date-fns";
 import type { MetaData, Post } from "~/types";
 import Date from "../components/date";
+import Image from "next/image";
 import fs from "fs/promises";
 import Head from "next/head";
 import Link from "next/link";
@@ -17,26 +18,54 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <ul>
-          {posts.map((post, index) => (
-            <li className="mb-4 list-none text-center md:text-left" key={index}>
-              <Link
-                className="relative inline-block group"
-                href={`/posts/${post.meta.id}`}
-              >
-                <span className="text-lg relative z-10 underline hover:decoration-2">
-                  {post.meta.title}
-                </span>
-                <span className="absolute inset-0 bg-yellow-200 h-4 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform translate-y-2 ease-out duration-500"></span>
-              </Link>
-              <br />
-              <small className="text-gray-600">
-                <Date dateString={post.meta.date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+      <section className="py-8 bg-_lightgray">
+        <div className="container mx-auto mt-12">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post, index) => (
+              <li className="list-none group relative m-4" key={index}>
+                <Link
+                  href={`/posts/${post.meta.id}`}
+                  className="flex flex-col gap-2 p-4 h-full hover-underline-container"
+                >
+                  <div className="w-full bg-orange-400">
+                    <Image
+                      width={600}
+                      height={600}
+                      alt={post.meta.title}
+                      src={post.meta.image}
+                    />
+                  </div>
+                  <div className="text-_black p-4 flex-1 flex flex-col justify-between">
+                    <div className="font-semibold">
+                      <span className="animated-multi-underline">
+                        {post.meta.title}
+                      </span>
+                    </div>
+                    <div className="font-light mt-auto">
+                      <Date dateString={post.meta.date} />
+                    </div>
+                  </div>
+                </Link>
+                <div
+                  className="absolute top-0 left-0 right-0 h-px bg-_gray"
+                  style={{ top: "1rem" }}
+                ></div>
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-px bg-_gray"
+                  style={{ bottom: "1rem" }}
+                ></div>
+                <div
+                  className="absolute top-0 bottom-0 left-0 w-px bg-_gray"
+                  style={{ left: "1rem" }}
+                ></div>
+                <div
+                  className="absolute top-0 bottom-0 right-0 w-px bg-_gray"
+                  style={{ right: "1rem" }}
+                ></div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </Layout>
   );

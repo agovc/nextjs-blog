@@ -4,6 +4,7 @@ title: "Elevating Complex Data Visualization: A Journey from Interactive JSON to
 description: "Explore the journey of rendering complex data structures interactively in React, from crafting an interactive JSON component to extending the concept to interactive tables, overcoming challenges in state management and user experience."
 isPublished: true
 date: "2024-04-12"
+image: "/images/thumbnails/complex-data.webp"
 ---
 
 The quest for rendering complex data in a user-friendly and visually appealing manner led me on a journey from crafting an interactive JSON component to extending the concept to interactive tables. In this blog post, I'll share insights into the development process, challenges encountered, and solutions explored along the way.
