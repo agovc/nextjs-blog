@@ -30,7 +30,7 @@ export default function Layout({
       </Head>
       <header>
         {home ? (
-          <div className="flex justify-center items-center h-96 relative">
+          <div className="flex justify-center items-center py-4 md:py-12 relative">
             <div className="container mx-auto mt-2">
               <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <li className="hidden lg:block list-none group relative p-4 m-4 lg:col-span-1 h-[283px] overflow-hidden">
@@ -68,7 +68,7 @@ export default function Layout({
                   </h1>
 
                   <p className="my-6 text-_darkgray">
-                    {"I'm a SF-based software engineer specializing in"}
+                    {"I'm a SF-based 🏳️‍🌈 software engineer specializing in"}
                     <span className="font-semibold">{" frontend "}</span>
                     {"development with a keen interest in"}
                     <span className="font-semibold">{" AI."}</span>
